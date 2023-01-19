@@ -2,23 +2,36 @@
   "name": "e12",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
+  "main": "./dist/main.js",
   "browser": {
     "[module-name]": false
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "start:dev": "webpack serve --config config/webpack.dev.js",
+    "start:prod": "webpack serve --config config/webpack.prod.js",
+    "test": "eslint . src config",
     "prepare": "husky install",
     "lint": "eslint . src config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olexiygolovko/webpack-dev-server.git"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/expect-puppeteer": "^5.0.2",
+    "@types/jest": "^29.2.5",
+    "@types/jest-environment-puppeteer": "^5.0.3",
+    "eslint-loader": "^4.0.2",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
-    "pug": "^2.0.4",
-    "pug-loader": "^2.4.0",
+    "jest": "^29.3.1",
+    "jest-puppeteer": "^6.2.0",
+    "merge": "^2.1.1",
+    "pug": "^3.0.2",
+    "pug-loader": "^1.0.2",
+    "ts-jest": "^29.0.5",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
